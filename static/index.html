@@ -121,16 +121,17 @@
         </style>
 
         <div id="wrapper">
-            <br>
-            <div id="header"><h1>Roeypad - An Etherpad Experiment</h1></div>
-            <br>
             <div id="inner">
+                <br>
+                <div id="header"><h1>Roeypad - An Etherpad Experiment</h1></div>
+                <br>
                 <div id="label" class="translate">Create or Open a Pad named:</div>
-                <div id="button" onclick="go2Random()" class="translate">Make a New Pad</div>
                 <form action="#" onsubmit="go2Name();return false;">
                     <input type="text" id="padname" autofocus x-webkit-speech>
                     <button type="submit">OK</button>
                 </form>
+                <br>
+                <div id="button" onclick="go2Random()" class="translate">Make a New Pad</div>
             </div>
         </div>
 
