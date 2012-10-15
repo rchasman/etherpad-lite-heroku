@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 
-        <title>Etherpad Lite</title>
+        <title>Roeypad</title>
 
-        <meta charset="utf-8"> 
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
         <style>
@@ -82,7 +82,7 @@
             input[type="text"] {
               border-radius: 3px;
               box-sizing: border-box;
-              -moz-box-sizing: border-box;   
+              -moz-box-sizing: border-box;
               padding: 0 45px 0 10px;
               *padding: 0; /* IE7 hack */
               width: 100%;
@@ -108,7 +108,7 @@
                 margin-top: 0;
               }
               #inner {
-                width: 95%;        
+                width: 95%;
               }
               #label {
                 text-align: center;
@@ -119,39 +119,39 @@
         <div id="wrapper">
             <div id="inner">
                 <div id="button" onclick="go2Random()" class="translate">New Pad</div>
-                <div id="label" class="translate">or create/open a Pad with the name</div> 
-                <form action="#" onsubmit="go2Name();return false;"> 
-                    <input type="text" id="padname" autofocus x-webkit-speech> 
+                <div id="label" class="translate">or create/open a Pad with the name</div>
+                <form action="#" onsubmit="go2Name();return false;">
+                    <input type="text" id="padname" autofocus x-webkit-speech>
                     <button type="submit">OK</button>
                 </form>
             </div>
         </div>
 
-        <script> 
-            function go2Name() 
+        <script>
+            function go2Name()
             {
                 var padname = document.getElementById("padname").value;
                 padname.length > 0 ? window.location = "p/" + padname : alert("Please enter a name")
             }
- 
-            function go2Random() 
+
+            function go2Random()
             {
                 window.location = "p/" + randomPadName();
             }
- 
-            function randomPadName() 
+
+            function randomPadName()
             {
                 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
                 var string_length = 10;
                 var randomstring = '';
-                for (var i = 0; i < string_length; i++) 
+                for (var i = 0; i < string_length; i++)
                 {
                     var rnum = Math.floor(Math.random() * chars.length);
                     randomstring += chars.substring(rnum, rnum + 1);
                 }
                 return randomstring;
             }
-            
+
             // start the custom js
             if (typeof customStart == "function") customStart();
         </script>
